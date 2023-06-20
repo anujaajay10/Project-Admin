@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../service/admin.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -7,13 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent {
-  username: string | undefined;
-  password: string | undefined;
-  isLoggedIn: boolean | any;
+  username!: string 
+  password!: string 
+  isLoggedIn!: boolean 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private adminService:AdminService) { }
 
   login() {
+    this.adminService.login(this.username,this.password);
     // Perform login logic, validate credentials, etc.
 
     // Once the user is successfully logged in, set the isLoggedIn property to true

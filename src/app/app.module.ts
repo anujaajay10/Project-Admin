@@ -11,6 +11,8 @@ import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminService } from './service/admin.service';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
